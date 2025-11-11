@@ -9,7 +9,7 @@ if (cid === undefined) {
 }
 
 // Exchange this for your own cid
-cid = 'examplecid';
+cid = 'leaga';
 
 // Defect: action 0
 // Cooperate: action 1
@@ -38,9 +38,10 @@ strategies[cid + '10b'] = function () {
 strategies[cid + '10c'] = function () {
   function chooseAction(me, opponent, t) {
     // Tit for tat
+    // but start with defect
 
     if (t == 0) {
-      return 1; // cooperate in first round
+      return 0; // cooperate in first round
     }
 
     return opponent[t-1]; // otherwise copy opponent
